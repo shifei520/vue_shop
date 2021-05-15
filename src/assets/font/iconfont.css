@@ -1,6 +1,7 @@
 @font-face {
   font-family: "iconfont"; /* Project id  */
   src: url("iconfont-login.ttf?t=1620547218364") format("truetype");
+  src: url('iconfont-common.ttf?t=1523541245904') format('truetype')
 }
 
 .iconfont {
@@ -18,3 +19,18 @@
 .icon-unlock-fill:before {
   content: "\e78f";
 }
+.icon-users:before { content: "\e8b5"; }
+
+.icon-3702mima:before { content: "\e66c"; }
+
+.icon-shangpin:before { content: "\e888"; }
+
+.icon-danju:before { content: "\e89b"; }
+
+.icon-tijikongjian:before { content: "\e89f"; }
+
+.icon-morentouxiang:before { content: "\e8c9"; }
+
+.icon-baobiao:before { content: "\e902"; }
+
+.icon-lock_fill:before { content: "\e709"; }

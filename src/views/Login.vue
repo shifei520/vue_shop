@@ -63,9 +63,8 @@ export default {
     login() {
       this.$refs.formLoginRef.validate((valid) => {
         if (!valid) return
-
         this.$http.post('login', this.formLogin).then((res) => {
-          console.log(res)
+          // console.log(res)
           if (res.data.meta.status !== 200)
             return this.$message.error('登陆失败!')
           this.$message.success('登陆成功!')
