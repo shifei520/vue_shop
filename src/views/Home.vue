@@ -57,65 +57,65 @@
 
 <script>
 //导入侧边栏列表数据
-import { getMenuList } from 'network/request_data.js'
+import { getMenuList } from "network/request_data.js";
 
 export default {
-  name: 'Home',
+  name: "Home",
   data() {
     return {
       //侧边栏列表
       MenuList: [],
       //列表图标
       menuIcon: {
-        125: 'iconfont icon-users',
-        103: 'iconfont icon-tijikongjian',
-        101: 'iconfont icon-shangpin',
-        102: 'iconfont icon-danju',
-        145: 'iconfont icon-baobiao',
+        125: "iconfont icon-users",
+        103: "iconfont icon-tijikongjian",
+        101: "iconfont icon-shangpin",
+        102: "iconfont icon-danju",
+        145: "iconfont icon-baobiao",
       },
       //侧边栏伸展收缩变量
       isToggle: false,
-      activePath: '',
-    }
+      activePath: "",
+    };
   },
   created() {
     //组建刚创建就获取列表数据
-    this.getMenuListData()
+    this.getMenuListData();
     //创建时就获取路径使左侧导航栏高亮
-    this.activePath = window.sessionStorage.getItem('activePath')
+    this.activePath = window.sessionStorage.getItem("activePath");
   },
   computed: {
     asideWidth() {
-      return this.isToggle ? '64px' : '200px'
+      return this.isToggle ? "64px" : "200px";
     },
   },
   methods: {
     //退出登录按钮功能
     dropOut() {
-      window.sessionStorage.clear()
+      window.sessionStorage.clear();
       // window.location.reload();
-      this.$router.push('/login')
+      this.$router.push("/login");
     },
     //获取左侧列表数据
     getMenuListData() {
       getMenuList().then((res) => {
         if (res.meta.status !== 200)
-          return this.$message.error('获取列表数据失败!')
+          return this.$message.error("获取列表数据失败!");
         // console.log(res)
-        this.MenuList = res.data
-      })
+        this.MenuList = res.data;
+      });
     },
     //侧边栏伸展收缩
     toggle() {
-      this.isToggle = !this.isToggle
+      this.isToggle = !this.isToggle;
     },
     //保存当前登录路径
     saveActivePath(activePath) {
-      window.sessionStorage.setItem('activePath', activePath)
-      this.activePath = activePath
+      window.sessionStorage.setItem("activePath", activePath);
+      this.activePath = activePath;
     },
   },
-}
+};
 </script>
 
 <style lang="less" scoped>

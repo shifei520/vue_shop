@@ -2,6 +2,7 @@ html,
 body,
 #app {
   height: 100%;
+  min-width: 1300px;
 }
 * {
   box-sizing: border-box;

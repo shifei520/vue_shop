@@ -4,6 +4,8 @@ import VueRouter from 'vue-router'
 const Login = () => import('views/Login')
 const Home = () => import('views/Home')
 const Users = () => import('views/users/Users')
+const Rights = () => import('views/power/Rights')
+const Roles = () => import('views/power/Roles')
 const Welcome = () => import('components/Welcome')
 Vue.use(VueRouter)
 
@@ -16,7 +18,9 @@ const routes = [
     redirect: '/welcome',
     children: [
       { path: '/welcome', component: Welcome },
-      { path: '/users', component: Users }
+      { path: '/users', component: Users },
+      { path: '/rights', component: Rights },
+      { path: '/roles', component: Roles }
     ]
   }
 ]
@@ -26,11 +30,10 @@ const router = new VueRouter({
   mode: 'history'
 })
 //全局路由守卫
-router.beforeEach((to, from, next) => {
+router.beforeEach(async (to, from, next) => {
   if (to.path === '/login') return next()
   const token = window.sessionStorage.getItem('token')
   if (!token) return next('/login')
   next()
 })
-
 export default router
