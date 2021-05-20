@@ -131,3 +131,46 @@ export function assignUserRole(id, rid) {
     }
   })
 }
+
+//商品分类数据列表获取
+export function categoryList(queryInfo) {
+  return request({
+    url: '/categories',
+    params: queryInfo
+  })
+}
+
+// 添加商品分类
+export function addCategory(params) {
+  return request({
+    url: '/categories',
+    method: 'post',
+    data: params
+  })
+}
+
+// 根据id查询商品分类
+export function queryCategory(id) {
+  return request({
+    url: '/categories/' + id
+  })
+}
+
+// 编辑提交分类
+export function editCategory(id, cname) {
+  return request({
+    url: '/categories/' + id,
+    method: 'put',
+    data: {
+      cat_name: cname
+    }
+  })
+}
+
+// 删除商品分类
+export function deleteCategory(id) {
+  return request({
+    url: '/categories/' + id,
+    method: 'delete'
+  })
+}
