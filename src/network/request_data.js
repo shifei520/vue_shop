@@ -174,3 +174,50 @@ export function deleteCategory(id) {
     method: 'delete'
   })
 }
+
+// 参数列表获取
+export function paramsList(id, sel) {
+  return request({
+    url: '/categories/' + id + '/attributes',
+    params: {
+      sel
+    }
+  })
+}
+
+// 添加动态参数或者静态属性
+export function addParams(id, obj) {
+  return request({
+    method: 'post',
+    url: '/categories/' + id + '/attributes',
+    data: obj
+  })
+}
+// 根据 ID 查询参数
+export function queryParamsById(id, attrId, sel) {
+  return request({
+    url: '/categories/' + id + '/attributes/' + attrId,
+    params: {
+      attr_sel: sel
+    }
+  })
+}
+// 编辑提交参数
+export function modifyParams(id, attrId, sel, name, vals) {
+  return request({
+    url: '/categories/' + id + '/attributes/' + attrId,
+    method: 'put',
+    data: {
+      attr_sel: sel,
+      attr_name: name,
+      attr_vals: vals
+    }
+  })
+}
+// 删除参数
+export function deleteParams(id, attrId) {
+  return request({
+    url: '/categories/' + id + '/attributes/' + attrId,
+    method: 'delete'
+  })
+}
