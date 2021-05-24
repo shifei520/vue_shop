@@ -1,6 +1,4 @@
 import axios from 'axios'
-axios.defaults.headers.post['Content-Type'] =
-  'application/x-www-form-urlencoded'
 export function request(config) {
   return new Promise((resolve, reject) => {
     const instance = axios.create({

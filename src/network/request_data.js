@@ -221,3 +221,28 @@ export function deleteParams(id, attrId) {
     method: 'delete'
   })
 }
+
+// 商品列表数据请求
+export function goodsList(queryInfo) {
+  return request({
+    url: '/goods',
+    params: queryInfo
+  })
+}
+
+//添加商品
+export function addGoods(queryInfo) {
+  return request({
+    url: 'goods',
+    method: 'post',
+    data: queryInfo
+  })
+}
+
+// 删除商品
+export function deleteGoods(id) {
+  return request({
+    url: '/goods/' + id,
+    method: 'delete'
+  })
+}
