@@ -296,6 +296,7 @@ export default {
           this.addForm.attrs.push(itemAttrs)
         })
         form.attrs = this.addForm.attrs
+
         addGoods(form).then((res) => {
           if (res.meta.status !== 201)
             return this.$message.error('添加商品失败')

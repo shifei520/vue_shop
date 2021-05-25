@@ -27,6 +27,21 @@ Vue.config.productionTip = false
 Vue.use(ElementUI)
 Vue.use(VXETable)
 Vue.use(VueQuillEditor)
+
+// 注册全局事件过滤器
+Vue.filter('dateFormate', function(timer) {
+  const date = new Date(timer)
+  const y = date.getFullYear()
+  const m =
+    date.getMonth() + 1 > 10 ? date.getMonth() + 1 : '0' + (date.getMonth() + 1)
+  const d = date.getDate() > 10 ? date.getDate() : '0' + date.getDate()
+  const h = date.getHours() > 10 ? date.getHours() : '0' + date.getHours()
+  const mm =
+    date.getMinutes() > 10 ? date.getMinutes() : '0' + date.getMinutes()
+  const s = date.getMinutes() > 10 ? date.getMinutes() : '0' + date.getMinutes()
+  return `${y}-${m}-${d} ${h}:${mm}:${s}`
+})
+
 new Vue({
   router,
   render: h => h(App)

@@ -246,3 +246,18 @@ export function deleteGoods(id) {
     method: 'delete'
   })
 }
+
+// 订单数据列表获取
+export function orderList(queryInfo) {
+  return request({
+    url: '/orders',
+    params: queryInfo
+  })
+}
+
+// 查看物流信息
+export function logisticsInfo(id) {
+  return request({
+    url: '/kuaidi/' + id
+  })
+}

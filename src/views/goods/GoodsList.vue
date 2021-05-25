@@ -35,7 +35,10 @@
         </el-table-column>
         <el-table-column prop="goods_weight" label="商品重量" width="90px">
         </el-table-column>
-        <el-table-column prop="add_time" label="创建时间" width="130px">
+        <el-table-column prop="add_time" label="创建时间" width="160px">
+          <template v-slot="scope">
+            {{ scope.row.add_time | dateFormate }}
+          </template>
         </el-table-column>
         <el-table-column label="操作" width="140px">
           <template v-slot="scope">
