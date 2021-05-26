@@ -261,3 +261,10 @@ export function logisticsInfo(id) {
     url: '/kuaidi/' + id
   })
 }
+
+//基于时间统计的折线图数据
+export function chartData() {
+  return request({
+    url: 'reports/type/1'
+  })
+}
